@@ -6,8 +6,9 @@ This project explores traffic accident trends using real-world data and visualiz
 ---
 
 ## 📁 Dataset
-- **Primary CSV Used**: `your_accident_data.csv`
-- **Optional Dataset**: `traffic_accidents_3.csv` (used in R script)
+- **`traffic_accidents.csv`** (included, ~209k rows): real crash records with date, traffic-control device, weather, lighting, crash type, trafficway, alignment, and injury fields. Used by both the Python and R analyses.
+
+> This repository combines the full Barclays datathon submission: the Python analysis + Bayesian simulations and the R datathon/visualization scripts (previously split across two repos) now live together with the dataset.
 
 ---
 
@@ -46,12 +47,15 @@ Uses different Beta parameters to simulate prior and posterior:
 
 ---
 
-## 📊 R Script – Fatal Injury Breakdown
+## 📊 R Scripts
 
-### Libraries Used
-- `ggplot2`, `dplyr`, `tidyr`, `patchwork`
+Two R analyses are included:
 
-### Analysis Performed
+- **`datathon.R`** — the main datathon exploration (tidyverse / `viridis` / `gridExtra`): data cleaning and the visual storytelling produced during the hackathon.
+- **`fatal_injuries_by_group.R`** — fatal-injury breakdown described below.
+
+### `fatal_injuries_by_group.R`
+**Libraries:** `ggplot2`, `dplyr`, `tidyr`, `patchwork`
 - Groups `injuries_fatal` by:
   - `weather_condition`
   - `first_crash_type`
